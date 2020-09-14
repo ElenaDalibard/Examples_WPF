@@ -1,0 +1,17 @@
+﻿<Window x:Class="Contacts.DetailContact"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Contacts"
+        mc:Ignorable="d"
+        Title="DetailContact" Height="450" Width="378.279">
+    <Grid>
+        <TextBlock x:Name="NomPrenom" HorizontalAlignment="Left" FontSize="20" Height="42" Margin="28,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="310"/>
+        <TextBlock x:Name="Telephone" HorizontalAlignment="Left" FontSize="17" Margin="28,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="25" Width="182"/>
+        <ListBox x:Name="Emails" HorizontalAlignment="Left" FontSize="17" Height="180" Margin="28,137,0,0" VerticalAlignment="Top" Width="299"/>
+        <Button Content="Modifier" HorizontalAlignment="Left" FontSize="17" Margin="28,340,0,0" VerticalAlignment="Top" Width="207" Click="Click_Edit"/>
+        <Button Content="Supprimer" HorizontalAlignment="Left" FontSize="17" Margin="28,372,0,0" VerticalAlignment="Top" Width="207" Click="Click_Delete"/>
+
+    </Grid>
+</Window>
