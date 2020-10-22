@@ -5,26 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Contacts"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Annuaire" Height="450" Width="917">
+    <Grid Margin="0,0,2,7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="736*"/>
+        </Grid.ColumnDefinitions>
         <Label Content="Nom :" HorizontalAlignment="Left" FontSize="17" Margin="32,25,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxNom" HorizontalAlignment="Left" FontSize="17" Height="33" Margin="132,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164"/>
+        <TextBox x:Name="TextBoxNom" HorizontalAlignment="Left" FontSize="17" Height="33" Margin="132,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" Grid.ColumnSpan="2"/>
         <Label Content="Prénom :" HorizontalAlignment="Left" FontSize="17" Margin="32,81,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxPrenom" HorizontalAlignment="Left" FontSize="17" Height="33" Margin="132,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164"/>
+        <TextBox x:Name="TextBoxPrenom" HorizontalAlignment="Left" FontSize="17" Height="33" Margin="132,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" Grid.ColumnSpan="2"/>
         <Label Content="Téléphone :" HorizontalAlignment="Left" FontSize="17" Margin="32,138,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxTel" HorizontalAlignment="Left" FontSize="17" Height="33" Margin="132,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164"/>
+        <TextBox x:Name="TextBoxTel" HorizontalAlignment="Left" FontSize="17" Height="33" Margin="132,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Grid.ColumnSpan="2"/>
         <Label Content="Email :" HorizontalAlignment="Left" FontSize="17" Margin="32,200,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" FontSize="17" Height="33" Margin="132,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164"/>
-        <Button Content="Ajouter Email" HorizontalAlignment="Left" FontSize="17" Margin="296,200,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.569,-0.139" Click="Click_AddEmail" Height="33"/>
-        <Button Content="Valider" HorizontalAlignment="Left" FontSize="17" Margin="32,345,0,0" VerticalAlignment="Top" Width="264" Height="46" Click="Click_Valider"/>
-        <Label Content="Liste de contacts" HorizontalAlignment="Left" FontSize="17" Margin="562,10,0,0" VerticalAlignment="Top"/>
-        <Button Content="Voir" HorizontalAlignment="Left" FontSize="17" Margin="562,375,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.667,0.53" Click="Click_VoirContact"/>
-        <ListBox x:Name="ListEmails" HorizontalAlignment="Left" Height="73" Margin="32,256,0,0" VerticalAlignment="Top" Width="264"/>
-        <ListBox x:Name="ListContacts" HorizontalAlignment="Left" Height="275" Margin="478,81,0,0" VerticalAlignment="Top" Width="288"/>
-        <TextBox x:Name="SearchTel" HorizontalAlignment="Left" FontSize="17" Height="30" Margin="478,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182"/>
-        <Button Content="Rechercher" FontSize="17" HorizontalAlignment="Left" Margin="665,44,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.232,0.307" Height="30" Click="Click_Search"/>
-        <Button Content="Modifier Email" FontSize="15" HorizontalAlignment="Left" Margin="296,256,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5" Click="Click_EditEmail" Height="35"/>
-        <Button Content="Supprimer Email" FontSize="15" HorizontalAlignment="Left" Margin="296,291,0,0" VerticalAlignment="Top" Width="120" Height="38" Click="Click_DeleteEmail"/>
+        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" FontSize="17" Height="33" Margin="132,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" Grid.ColumnSpan="2"/>
+        <Button Content="Ajouter Email" HorizontalAlignment="Left" FontSize="17" Margin="237,200,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.569,-0.139" Click="Click_AddEmail" Height="33" Grid.Column="1"/>
+        <Button Content="Valider" HorizontalAlignment="Left" FontSize="17" Margin="32,345,0,0" VerticalAlignment="Top" Width="517" Height="46" Click="Click_Valider" Grid.ColumnSpan="2"/>
+        <Label Content="Liste de contacts" HorizontalAlignment="Left" FontSize="17" Margin="475,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Voir" HorizontalAlignment="Left" FontSize="17" Margin="475,375,0,0" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.667,0.53" Click="Click_VoirContact" Grid.Column="1"/>
+        <ListBox x:Name="ListEmails" HorizontalAlignment="Left" Height="73" Margin="132,256,0,0" VerticalAlignment="Top" Width="297" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="ListContacts" Height="275" Margin="391,81,0,0" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="288"/>
+        <TextBox x:Name="SearchTel" HorizontalAlignment="Left" FontSize="17" Height="30" Margin="391,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" Grid.Column="1"/>
+        <Button Content="Rechercher" FontSize="17" HorizontalAlignment="Left" Margin="578,44,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.232,0.307" Height="30" Click="Click_Search" Grid.Column="1"/>
+        <Button Content="Modifier Email" FontSize="15" HorizontalAlignment="Left" Margin="237,256,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5" Click="Click_EditEmail" Height="35" Grid.Column="1"/>
+        <Button Content="Supprimer Email" FontSize="15" HorizontalAlignment="Left" Margin="237,291,0,0" VerticalAlignment="Top" Width="120" Height="38" Click="Click_DeleteEmail" Grid.Column="1"/>
 
     </Grid>
 </Window>

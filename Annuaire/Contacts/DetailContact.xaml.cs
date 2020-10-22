@@ -36,14 +36,13 @@ namespace Contacts
 
         private void Click_Edit(object sender, RoutedEventArgs e)
         {
+            contact.DeleteContact();
             MainWindow addContact = new MainWindow(contact);
             addContact.Show();
             addContact.TextBoxNom.Text = contact.Nom;
             addContact.TextBoxPrenom.Text = contact.Prenom;
             addContact.TextBoxTel.Text = contact.Telephone;
             addContact.ListEmails.ItemsSource = contact.Emails;
-            addContact.NewContact = contact;
-            addContact.IsEdit = true;
             this.Close();
         }
 

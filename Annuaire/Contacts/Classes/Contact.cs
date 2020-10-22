@@ -73,7 +73,7 @@ namespace Contacts.Classes
         {
             string request = "delete from contact where id=@id";
             command = new SqlCommand(request, Connection.Instance);
-            command.Parameters.Add(new SqlParameter("@id", id));
+            command.Parameters.Add(new SqlParameter("@id", Id));
 
             Connection.Instance.Open();
             int nbRows = command.ExecuteNonQuery();
@@ -82,10 +82,6 @@ namespace Contacts.Classes
             if(nbRows==1)
             {
                 Emails.ForEach(e => e.DeleteEmail());
-                //foreach(Email e in emails)
-                //{
-                //    e.DeleteEmail();
-                //}
             }
             return nbRows==1;
         }

@@ -24,62 +24,49 @@ namespace Contacts
     {
         List<Contact> contacts;
         Contact newContact;
-        bool isEdit = false;
-
-        public bool IsEdit { get => isEdit; set => isEdit = value; }
-        public Contact NewContact { get => newContact; set => newContact = value; }
-        public List<Contact> Contacts { get => contacts; set => contacts = value; }
 
         public MainWindow()
         {
             InitializeComponent();
-            Contacts = Contact.GetContactByTel();
-            ListContacts.ItemsSource = Contacts;
-            if(NewContact==null)
+            contacts = Contact.GetContactByTel();
+            ListContacts.ItemsSource = contacts;
+            if(newContact==null)
             {
-                NewContact = new Contact();
+                newContact = new Contact();
             }
         }
 
         public MainWindow(Contact c) :this()
         {
-            NewContact = c;
+            newContact = c;
         }
 
         private void Click_AddEmail(object sender, RoutedEventArgs e)
         {
-            if(TextBoxEmail.Text != "")
-            {
-                Email email = new Email(TextBoxEmail.Text, NewContact.Id);
-                NewContact.Emails.Add(email);
-                List<Email> tmpList = new List<Email>();
-                tmpList.AddRange(NewContact.Emails);
-                ListEmails.ItemsSource = tmpList;
-                TextBoxEmail.Text = "";
-            }
+            Email email = new Email(TextBoxEmail.Text, newContact.Id);
+            newContact.Emails.Add(email);
+            List<Email> tmpList = new List<Email>();
+            tmpList.AddRange(newContact.Emails);
+            ListEmails.ItemsSource = tmpList;
+            TextBoxEmail.Text = "";
         }
 
         private void Click_Valider(object sender, RoutedEventArgs e)
         {
-            NewContact.Nom = TextBoxNom.Text;
-            NewContact.Prenom = TextBoxPrenom.Text;
-            NewContact.Telephone = TextBoxTel.Text;
-            if(IsEdit)
-            {
-                NewContact.UpdateContact();
-            }
-            else
-            {
-                NewContact.SaveContact();
-                Contacts.Add(NewContact);
-            }
-            ListContacts.ItemsSource = Contact.GetContactByTel();
+            newContact.Nom = TextBoxNom.Text;
+            newContact.Prenom = TextBoxPrenom.Text;
+            newContact.Telephone = TextBoxTel.Text;
+            contacts.Add(newContact);
+            List<Contact> tmpList = new List<Contact>();
+            tmpList.AddRange(contacts);
+            ListContacts.ItemsSource = tmpList;
+            newContact.SaveContact();
             ClearForm();
         }
 
         public void ClearForm()
         {
-            NewContact = new Contact();
+            newContact = new Contact();
             TextBoxNom.Text = "";
             TextBoxPrenom.Text = "";
             TextBoxTel.Text = "";
@@ -92,7 +79,6 @@ namespace Contacts
             {
                 DetailContact contact = new DetailContact(c);
                 contact.Show();
-                this.Close();
             }
         }
 
@@ -107,9 +93,9 @@ namespace Contacts
             if (ListEmails.SelectedItem is Email m)
             {
                 TextBoxEmail.Text = m.Mail;
-                NewContact.Emails.Remove(m);
+                newContact.Emails.Remove(m);
                 List<Email> tmpList = new List<Email>();
-                tmpList.AddRange(NewContact.Emails);
+                tmpList.AddRange(newContact.Emails);
                 ListEmails.ItemsSource = tmpList;
             }
         }
@@ -118,10 +104,10 @@ namespace Contacts
         {
             if (ListEmails.SelectedItem is Email m)
             {
-                NewContact.Emails.Remove(m);
+                newContact.Emails.Remove(m);
                 m.DeleteEmail();
                 List<Email> tmpList = new List<Email>();
-                tmpList.AddRange(NewContact.Emails);
+                tmpList.AddRange(newContact.Emails);
                 ListEmails.ItemsSource = tmpList;
             }
         }
