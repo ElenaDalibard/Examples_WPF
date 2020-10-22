@@ -28,7 +28,7 @@ namespace Contacts
         public MainWindow()
         {
             InitializeComponent();
-            contacts = Contact.GetContactByTel();
+            contacts = Contact.GetContactByTelOrName();
             ListContacts.ItemsSource = contacts;
             if(newContact==null)
             {
@@ -84,7 +84,7 @@ namespace Contacts
 
         private void Click_Search(object sender, RoutedEventArgs e)
         {
-            List<Contact> listSearch = Contact.GetContactByTel(SearchTel.Text);
+            List<Contact> listSearch = Contact.GetContactByTelOrName(SearchTel.Text);
             ListContacts.ItemsSource = listSearch;
         }
 

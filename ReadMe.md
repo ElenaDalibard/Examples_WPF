@@ -30,6 +30,6 @@ Gestion de liste de contacts
 2. Voir la liste de contacts à jour.
 3. Modifier ou supprimer le contact.
 4. Modifier, supprimer, ajouter un email à un contact existant.
-5. Rechercher un contact par les premières chiffres de téléphone.
+5. Rechercher un contact par les chiffres de téléphone or lettre de nom ou prénom.
 
 ![](/Annuaire/show.gif)

@@ -102,20 +102,20 @@ namespace Contacts.Classes
             return nbRows ==1;
         }
 
-        public static List<Contact> GetContactByTel(string tel=null)
+        public static List<Contact> GetContactByTelOrName(string search=null)
         {
             List<Contact> contacts = new List<Contact>();
             string request = "select * from contact";
-            if(tel != null)
+            if(search != null)
             {
-                request += " where telephone like @tel";
+                request += " where telephone like @search or nom like @search or prenom like @search";
             }
 
             command = new SqlCommand(request, Connection.Instance);
 
-            if (tel != null)
+            if (search != null)
             {
-                command.Parameters.Add(new SqlParameter("@tel", tel + "%"));
+                command.Parameters.Add(new SqlParameter("@search", "%" + search + "%"));
             }
 
             Connection.Instance.Open();
