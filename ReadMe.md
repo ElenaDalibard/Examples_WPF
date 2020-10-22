@@ -17,6 +17,9 @@ La liste de fichiers est exporté comme un fichier csv.
 
 ![](/GestionFichiers/show.gif)
 
+![](/GestionFichiers/show_res1.jpg)
+![](/GestionFichiers/show_res2.jpg)
+
 
 
 # Annuaire
