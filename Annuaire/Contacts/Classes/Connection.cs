@@ -15,8 +15,7 @@ namespace Contacts.Classes
             { 
                 if(instance==null)
                 {
-                    instance = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\_GIT\Exercices_WPF\Annuaire\Table_Contacts.mdf;Integrated Security=True;Connect Timeout=30");
-
+                    instance = new SqlConnection(@"data source=(localdb)\mssqllocaldb;attachdbfilename=d:\programming\_git\exercices_wpf\annuaire\table_contacts.mdf;integrated security=true;connect timeout=30");
                 }
                 return instance;
             } 

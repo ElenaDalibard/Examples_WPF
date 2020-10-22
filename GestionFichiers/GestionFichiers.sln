@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionFichiers", "C:\Users\acer\Desktop\FullStack\Cours\FullStackCoursElena\DotNet\coursDotNet\GestionFichiers\GestionFichiers.csproj", "{18F28D5A-B844-48CE-92B9-807FABF83E38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionFichiers", "GestionFichiers\GestionFichiers.csproj", "{18F28D5A-B844-48CE-92B9-807FABF83E38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C1AE6C33-8CEF-497E-8FB2-0AF92EEC5251}
+		SolutionGuid = {826D5A3E-3931-45EA-B8D7-273A9E94DFC5}
 	EndGlobalSection
 EndGlobal

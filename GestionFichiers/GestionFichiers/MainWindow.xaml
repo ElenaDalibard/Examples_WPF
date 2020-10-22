@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionFichiers"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Gestion de fichiers" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Choisir un dossier :" Command="{Binding Command_Select}" FontSize="17" HorizontalAlignment="Left" Height="38" Margin="43,38,0,0" VerticalAlignment="Top" Width="153"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="15" Height="38" Margin="223,38,0,0" TextWrapping="Wrap" Text="{Binding PathDossier}" VerticalAlignment="Top" Width="541"/>
+        <Label Content="Type d'extension :" FontSize="17" HorizontalAlignment="Left" Height="40" Margin="43,105,0,0" VerticalAlignment="Top" Width="153"/>
+        <ComboBox ItemsSource="{Binding Extensions}" FontSize="17" SelectedItem="{Binding SelectedExtension}" HorizontalAlignment="Left" Height="40" Margin="242,105,0,0" VerticalAlignment="Top" Width="131"/>
+        <Button Content="Exporter" FontSize="17" Command="{Binding Command_Export}" HorizontalAlignment="Left" Margin="43,252,0,0" VerticalAlignment="Top" Width="330" Height="56"/>
+        <TextBlock HorizontalAlignment="Left" Height="45" FontSize="14" Margin="43,339,0,0" TextWrapping="Wrap" Text="{Binding PathCreatedFile}" VerticalAlignment="Top" Width="721"/>
+        <TextBlock HorizontalAlignment="Left" Margin="426,105,0,0" TextWrapping="Wrap" Text="{Binding Result}" VerticalAlignment="Top" Height="40" Width="338"/>
+        <RadioButton Content="Avec sous-dossiers" IsChecked="{Binding WithFolders}" FontStyle="Italic" FontSize="15" HorizontalAlignment="Left" Margin="43,190,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Sans sous-dossiers" IsChecked="{Binding NoFolders}" FontStyle="Italic" FontSize="15" HorizontalAlignment="Left" Margin="43,166,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
